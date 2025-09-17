@@ -1,0 +1,31 @@
+.ant-input-wrapper {
+  input {
+    background: transparent;
+    border: 1px solid #314158;
+    color: #314158;
+    border-right: 0;
+  }
+  button {
+    border: 1px solid #314158;
+    border-left: 0;
+    background: transparent;
+  }
+  .ant-btn-icon {
+    svg {
+      fill: #45556c !important;
+    }
+  }
+}
+.search {
+  div {
+    button {
+      background: #bedbff;
+      svg {
+        fill: #020618;
+      }
+    }
+  }
+}
+.ant-input::placeholder {
+  color: #314158;
+}

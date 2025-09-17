@@ -1,0 +1,70 @@
+@import "../../variables/variables.scss";
+.layout {
+  height: 100vh;
+  background-color: $BG-Lightest;
+}
+.demo-logo {
+  width: 128px;
+  height: 48px;
+  background-color: $BG-Light;
+}
+.container {
+  width: 1296px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 36px 72px 40px 72px;
+  .ant-menu {
+    width: 413px;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+.main {
+  padding: 40px 72px;
+  min-height: 280px;
+  color: #90a1b9;
+  background-color: $BG-Lightest;
+  text-align: center;
+}
+.cards {
+  margin-top: 24px;
+}
+.hr {
+  margin-top: 40px;
+  max-width: 1296px;
+  border: 1px solid $BG-Light;
+}
+footer {
+  .footer-menu {
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+  }
+  .demo-logo {
+    margin: 0 auto;
+    margin-top: 36px;
+    width: 288px;
+    border-radius: 10px;
+  }
+}
+.movieerror {
+  max-width: 1296px;
+  margin: 0 auto;
+  font-size: 50px;
+  color: red;
+  margin-top: 35px;
+}
+.showmore {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.disabled {
+  display: none;
+}

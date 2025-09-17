@@ -1,0 +1,36 @@
+@import "../../variables/variables.scss";
+.infopanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 56px;
+  background-color: #0f172b;
+  color: #90a1b9;
+  padding: 15px;
+  gap: 12px;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+.statement {
+  white-space: nowrap;
+}
+.info-btn {
+  color: #bedbff;
+  border: 1px solid transparent;
+}
+.info-btn:hover {
+  color: #94aac5 !important;
+  border: 1px solid transparent;
+}
+.infocircleoutlined {
+  svg {
+    width: 19px;
+    height: 19px;
+    fill: #155dfc;
+    background: #155dfc;
+    border-radius: 10px;
+    path[d="M464 336a48 48 0 1096 0 48 48 0 10-96 0zm72 112h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V456c0-4.4-3.6-8-8-8z"] {
+      fill: black;
+    }
+  }
+}

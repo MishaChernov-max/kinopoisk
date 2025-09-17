@@ -1,0 +1,18 @@
+.pagination {
+  margin-top: 20px;
+}
+.pagination-btn {
+  margin-right: 4px;
+  font-size: 18px;
+  background: transparent;
+  color: #90a1b9;
+  &:hover {
+    color: #535861;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #535861;
+  }
+}
+.active {
+  border-bottom: 1px solid #f0f6ff;
+  color: #f0f6ff;
+}
