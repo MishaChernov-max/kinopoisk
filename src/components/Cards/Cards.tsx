@@ -1,21 +1,17 @@
 import { Flex } from "antd";
 import MovieCard from "../Card/MovieCard";
-import type { IMovie } from "../../movieTypes/useMovies";
-import { useNavigate } from "react-router-dom";
+import type { IMovie } from "../../types/movies.types";
+import { Link } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
 interface CardsProps {
   cards: IMovie[];
 }
 function Cards({ cards }: CardsProps) {
-  const navigate = useNavigate();
   const { addToWatchList } = useActions();
   const handleaddToWatchList = (card: IMovie) => {
     addToWatchList(card);
   };
 
-  const moveToMoviePage = (card: IMovie) => {
-    navigate(`/film/${card.kinopoiskId}`);
-  };
   return (
     <Flex
       justify="flex-end"
@@ -32,7 +28,6 @@ function Cards({ cards }: CardsProps) {
             key={c.kinopoiskId}
             card={c}
             handleClick={handleaddToWatchList}
-            handleClickImg={moveToMoviePage}
           />
         );
       })}

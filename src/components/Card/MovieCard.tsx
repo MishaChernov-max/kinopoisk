@@ -2,18 +2,14 @@ import { Button, Flex } from "antd";
 import type { IMovie } from "../../types/movies.types";
 import { PlusCircleOutlined } from "@ant-design/icons";
 import "./Card.scss";
+import { Link } from "react-router-dom";
 
 export type MovieCardProps = {
   card: IMovie;
   handleClick?: (card: IMovie) => void;
-  handleClickImg?: (card: IMovie) => void;
 };
 
-function MovieCard({
-  card,
-  handleClick = () => {},
-  handleClickImg = () => {},
-}: MovieCardProps) {
+function MovieCard({ card, handleClick = () => {} }: MovieCardProps) {
   const {
     posterUrl,
     nameRu,
@@ -27,36 +23,30 @@ function MovieCard({
   const onClick = () => {
     handleClick(card);
   };
-  const onClickImg = () => {
-    handleClickImg(card);
-  };
 
   return (
-    <div className="card">
-      <img
-        src={posterUrl}
-        alt="movie-img"
-        className="movie-img"
-        onClick={onClickImg}
-      />
+    <Link to={"`/film/${card.kinopoiskId}`"}>
+      <div className="card">
+        <img src={posterUrl} alt="movie-img" className="movie-img" />
 
-      <h5>{nameOriginal ? nameOriginal : nameRu}</h5>
-      <p>Imdb: {ratingImdb}</p>
-      <Flex gap={20}>
-        {genres?.slice(0, 2).map(({ genre }) => (
-          <span key={genre}>{genre}</span>
-        ))}
-      </Flex>
-      <Flex justify="space-between" align="center">
+        <h5>{nameOriginal ? nameOriginal : nameRu}</h5>
+        <p>Imdb: {ratingImdb}</p>
         <Flex gap={20}>
-          <span>{year}</span>
-          <span>Кинопоиск: {ratingKinopoisk}</span>
+          {genres?.slice(0, 2).map(({ genre }) => (
+            <span key={genre}>{genre}</span>
+          ))}
         </Flex>
-        <Button type="primary" shape="circle" onClick={onClick}>
-          <PlusCircleOutlined />
-        </Button>
-      </Flex>
-    </div>
+        <Flex justify="space-between" align="center">
+          <Flex gap={20}>
+            <span>{year}</span>
+            <span>Кинопоиск: {ratingKinopoisk}</span>
+          </Flex>
+          <Button type="primary" shape="circle" onClick={onClick}>
+            <PlusCircleOutlined />
+          </Button>
+        </Flex>
+      </div>
+    </Link>
   );
 }
 export default MovieCard;
