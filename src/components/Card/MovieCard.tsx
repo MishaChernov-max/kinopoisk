@@ -25,28 +25,27 @@ function MovieCard({ card, handleClick = () => {} }: MovieCardProps) {
   };
 
   return (
-    <Link to={"`/film/${card.kinopoiskId}`"}>
-      <div className="card">
+    <div className="card">
+      <Link to={`/film/${card.kinopoiskId}`}>
         <img src={posterUrl} alt="movie-img" className="movie-img" />
-
-        <h5>{nameOriginal ? nameOriginal : nameRu}</h5>
-        <p>Imdb: {ratingImdb}</p>
+      </Link>
+      <h5>{nameOriginal ? nameOriginal : nameRu}</h5>
+      <p>Imdb: {ratingImdb}</p>
+      <Flex gap={20}>
+        {genres?.slice(0, 2).map(({ genre }) => (
+          <span key={genre}>{genre}</span>
+        ))}
+      </Flex>
+      <Flex justify="space-between" align="center">
         <Flex gap={20}>
-          {genres?.slice(0, 2).map(({ genre }) => (
-            <span key={genre}>{genre}</span>
-          ))}
+          <span>{year}</span>
+          <span>Кинопоиск: {ratingKinopoisk}</span>
         </Flex>
-        <Flex justify="space-between" align="center">
-          <Flex gap={20}>
-            <span>{year}</span>
-            <span>Кинопоиск: {ratingKinopoisk}</span>
-          </Flex>
-          <Button type="primary" shape="circle" onClick={onClick}>
-            <PlusCircleOutlined />
-          </Button>
-        </Flex>
-      </div>
-    </Link>
+        <Button type="primary" shape="circle" onClick={onClick}>
+          <PlusCircleOutlined />
+        </Button>
+      </Flex>
+    </div>
   );
 }
 export default MovieCard;

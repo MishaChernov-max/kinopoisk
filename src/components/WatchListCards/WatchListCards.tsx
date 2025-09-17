@@ -1,4 +1,4 @@
-import type { IMovie } from "../../movieTypes/useMovies";
+import type { IMovie } from "../../types/movies.types";
 import WatchListCard from "../WatchListCard/WatchListCard";
 import { Flex } from "antd";
 import { useActions } from "../../hooks/useActions";

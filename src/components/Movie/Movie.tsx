@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 import useFetchMovie from "../../hooks/useFetchMovie";
 import StatusWrapper from "../StatusWrapper/StatusWrapper";
 import SimilarMovies from "../SimilarMovies/SimilarMovies";
+import type { TVideo } from "../../api/movies";
 
 export type MovieProps = {
   movie: IMovie;
@@ -29,10 +30,10 @@ function Movie() {
   };
 
   const videoUrl =
-    movie?.videos.find((v) => v.site === "KINOPOISK_WIDGET") ||
-    movie?.videos.find((v) => v.site === "YANDEX_DISK") ||
-    movie?.videos.find((v) => v.site === "YOUTUBE") ||
-    movie?.videos.find((v) => v.site === "UNKNOWN");
+    movie?.videos.find((v: TVideo) => v.site === "KINOPOISK_WIDGET") ||
+    movie?.videos.find((v: TVideo) => v.site === "YANDEX_DISK") ||
+    movie?.videos.find((v: TVideo) => v.site === "YOUTUBE") ||
+    movie?.videos.find((v: TVideo) => v.site === "UNKNOWN");
 
   return (
     <>

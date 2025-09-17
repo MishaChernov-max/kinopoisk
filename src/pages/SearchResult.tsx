@@ -3,7 +3,6 @@ import CustomHeader from "../components/Header/Header";
 import { Content } from "antd/es/layout/layout";
 import CustomFooter from "../components/Footer/Footer";
 import Cards from "../components/Cards/Cards";
-
 import "../App.css";
 import { useSelector } from "react-redux";
 import type { RootState } from "../redux/store/store";

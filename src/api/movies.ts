@@ -32,16 +32,13 @@ export interface GetBoxOfficeResponse {
 }
 
 export async function getMovies(params?: MoviesRequestParams) {
-  const response = await instance.get<FilmSearchByFiltersResponse>(
-    "https://kinopoiskapiunofficial.tech/api/v2.2/films",
-    {
-      params: {
-        order: "NUM_VOTE",
-        type: "ALL",
-        ...params,
-      },
-    }
-  );
+  const response = await instance.get<FilmSearchByFiltersResponse>("/films", {
+    params: {
+      order: "NUM_VOTE",
+      type: "ALL",
+      ...params,
+    },
+  });
   console.log(response);
   return response;
 }

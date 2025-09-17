@@ -1,7 +1,6 @@
 import { Flex } from "antd";
 import MovieCard from "../Card/MovieCard";
 import type { IMovie } from "../../types/movies.types";
-import { Link } from "react-router-dom";
 import { useActions } from "../../hooks/useActions";
 interface CardsProps {
   cards: IMovie[];
